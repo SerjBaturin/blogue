@@ -1,0 +1,19 @@
+.Admin {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 90%;
+    height: 50px;
+    border-bottom: 1px solid rgb(211, 211, 211);
+
+    a {
+      margin-left: 1em;
+    }
+  }
+}
