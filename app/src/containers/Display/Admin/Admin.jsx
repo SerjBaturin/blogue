@@ -1,13 +1,25 @@
 import React from "react";
+import { connect } from "react-redux";
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import "./style.scss";
 
-export default function Admin() {
+function Admin(props) {
   return (
     <div className="Admin">
       <nav>
-        <a>Hey</a>
-        <a>HO</a>
+        <AccountCircleIcon className="admin-icon" />
+        <span>{props.toDashboard}</span>
+        <ExitToAppIcon className="exit-icon"/>
       </nav>
     </div>
   );
 }
+
+const mapStateToProps = state => {
+  return {
+    toDashboard: state.dashboard,
+  };
+};
+
+export default connect(mapStateToProps)(Admin);

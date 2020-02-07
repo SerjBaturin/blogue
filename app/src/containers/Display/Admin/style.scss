@@ -10,9 +10,14 @@
     align-items: center;
     width: 90%;
     height: 50px;
-    border-bottom: 1px solid rgb(211, 211, 211);
+    border-bottom: 1px solid rgba(42, 63, 76, 0.2);
 
-    a {
+    .admin-icon {
+      margin-right: 0.25em;
+    }
+
+    .exit-icon {
+      font-size: 1em;
       margin-left: 1em;
     }
   }
