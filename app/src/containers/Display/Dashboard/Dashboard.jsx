@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./style.scss";
+import UserQuantityDisplay from "../../../components/UserQuantityDisplay";
 
 export default function Dashboard() {
   const [data, setData] = useState();
   useEffect(() => {
-    axios("http://localhost:3000/dashboard").then(d => setData(d.data.name));
+    axios("http://localhost:3000/dashboard/quantity").then(d =>
+      setData(d.data),
+    );
   }, []);
 
   return (
     <div className="Dashboard">
-      <h2>{data}</h2>
+      <UserQuantityDisplay quantity={data} />
+      <UserQuantityDisplay quantity={data} />
+      <UserQuantityDisplay quantity={data} />
+      <UserQuantityDisplay quantity={data} />
     </div>
   );
 }
