@@ -5,6 +5,7 @@ const cors = require("cors");
 const PORT = 3000;
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 
 // Connect to DB
 
@@ -22,6 +23,12 @@ const user = require("./models/user");
 // Middlewares
 app.use(cors());
 // app.use(session({ secret: "Shh, tis a secret!!!" }));
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  }),
+);
+app.use(bodyParser.json());
 app.use("/admin", require("./routes/admin"));
 
 // Routes
