@@ -4,19 +4,17 @@ import "./style.scss";
 import UserQuantityDisplay from "../../../components/UserQuantityDisplay";
 
 export default function Dashboard() {
-  const [data, setData] = useState();
+  const [users, setUsers] = useState([]);
+  const [posts, setPosts] = useState([]);
   useEffect(() => {
-    axios("http://localhost:3000/dashboard/quantity").then(d =>
-      setData(d.data),
-    );
+    axios("http://localhost:3000/admin/users/all").then(d => setUsers(d.data));
+    axios("http://localhost:3000/admin/posts/all").then(d => setPosts(d.data));
   }, []);
 
   return (
     <div className="Dashboard">
-      <UserQuantityDisplay quantity={data} />
-      <UserQuantityDisplay quantity={data} />
-      <UserQuantityDisplay quantity={data} />
-      <UserQuantityDisplay quantity={data} />
+      <UserQuantityDisplay title={"Users"} quantity={users} />
+      <UserQuantityDisplay title={"Posts"} quantity={posts} />
     </div>
   );
 }

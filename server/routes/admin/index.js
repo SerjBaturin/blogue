@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
 
 // Users FIND
 router.get("/users/all", (req, res) => {
-  User.find().then(d => res.send(d.map(item => item.name).join(", ")));
+  User.find().then(d => res.send(d));
 });
 
 router.get("/users/:name", (req, res) => {

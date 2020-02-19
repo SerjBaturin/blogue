@@ -31,15 +31,6 @@ app.use(
 app.use(bodyParser.json());
 app.use("/admin", require("./routes/admin"));
 
-// Routes
-app.get("/dashboard", (req, res) => {
-  user.findOne({ name: "Kost Baturin" }).then(d => res.send(d));
-});
-
-app.get("/dashboard/quantity", (req, res) => {
-  user.find({}).then(d => res.send("" + d.length));
-});
-
 app.listen(PORT, () => {
   console.log("OK ===> ", PORT, process.pid);
 });

@@ -4,7 +4,9 @@ import "./style.scss";
 export default function UserQuantityDisplay(props) {
   return (
     <div className="user-quantity-display">
-      <h3>Users: {props.quantity}</h3>
+      <h3>
+        {props.title}: {props.quantity.length}
+      </h3>
     </div>
   );
 }
