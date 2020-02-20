@@ -17,11 +17,9 @@ mongoose.connect(process.env.CONNECT, {
   useUnifiedTopology: true,
 });
 
-// Users
-const user = require("./models/user");
-
 // Middlewares
 app.use(cors());
+// app.use(express.static("../app"));
 // app.use(session({ secret: "Shh, tis a secret!!!" }));
 app.use(
   bodyParser.urlencoded({
@@ -30,6 +28,7 @@ app.use(
 );
 app.use(bodyParser.json());
 app.use("/admin", require("./routes/admin"));
+app.use("/auth", require("./routes/auth"));
 
 app.listen(PORT, () => {
   console.log("OK ===> ", PORT, process.pid);

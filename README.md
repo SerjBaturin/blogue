@@ -1,2 +1,3 @@
 # blogue
-Simple blog engine with React, Node &amp; Postgres
+
+Simple blog engine with React, Node (Express, Mongoose) &amp; MongoDB
