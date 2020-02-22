@@ -1,6 +1,8 @@
-import { combineReducers } from 'redux'
-import dashboard from './dashboard'
+import { combineReducers } from "redux";
+import blog from "./blog";
+import dashboard from "./dashboard";
 
 export default combineReducers({
-  dashboard
-})
+  dashboard,
+  blog,
+});

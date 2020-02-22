@@ -29,6 +29,7 @@ app.use(
 app.use(bodyParser.json());
 app.use("/admin", require("./routes/admin"));
 app.use("/auth", require("./routes/auth"));
+app.use("/blog", require("./routes/blog"));
 
 app.listen(PORT, () => {
   console.log("OK ===> ", PORT, process.pid);

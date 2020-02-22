@@ -1,4 +1,5 @@
 import React from "react";
+import { Route } from "react-router-dom";
 import "./style.scss";
 import Sidebar from "./containers/Sidebar";
 import Header from "./containers/Header";
@@ -12,9 +13,9 @@ const Admin = () => {
       <Sidebar />
       <div className="admin__container">
         <Header />
-        <Dashboard />
-        <Users />
-        <Posts />
+        <Route path="/admin/dashboard" component={Dashboard} />
+        <Route path="/admin/users" component={Users} />
+        <Route path="/admin/posts" component={Posts} />
       </div>
     </div>
   );

@@ -3,12 +3,15 @@ import Blog from "../Blog";
 import Admin from "../Admin";
 import Login from "../Auth/Login";
 import "./style.scss";
+import { BrowserRouter } from "react-router-dom";
 
 const App = () => {
   return (
-    <div className="app">
-      <Login />
-    </div>
+    <BrowserRouter>
+      <div className="app">
+        <Blog />
+      </div>
+    </BrowserRouter>
   );
 };
 
