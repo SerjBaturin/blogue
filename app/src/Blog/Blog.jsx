@@ -1,47 +1,24 @@
 import React from "react";
-import { connect } from "react-redux";
-import blogAction from "../redux/actions/blog";
-import Loader from "../common/Loader";
+import BlogHeader from "./containers/BlogHeader";
+import BlogHome from "./containers/BlogHome";
+import BlogNews from "./containers/BlogNews";
+import BlogPosts from "./containers/BlogPosts";
+import BlogGalery from "./containers/BlogGalery";
+import BlogAbout from "./containers/BlogAbout";
+import { Route } from "react-router-dom";
+import "./style.scss";
 
-const Blog = props => {
-  const [isLoading, setIsLoading] = React.useState(true);
-  React.useEffect(() => {
-    setTimeout(() => {
-      props.getPosts();
-      setIsLoading(false);
-    }, 1000);
-  }, []);
-
+const Blog = () => {
   return (
-    <div className="blog">
-      <h1>BLOG</h1>
-      {isLoading === true ? (
-        <Loader />
-      ) : (
-        <ul>
-          {props.posts.map((item, i) => (
-            <li key={i}>
-              <h2>{item.title}</h2>
-              <i>{item.author}</i>
-              <p>{item.text}</p>
-              <i>{item.date}</i>
-            </li>
-          ))}
-        </ul>
-      )}
+    <div className="Blog">
+      <BlogHeader />
+      <Route exact path="/" component={BlogHome} />
+      <Route path="/news" component={BlogNews} />
+      <Route path="/posts" component={BlogPosts} />
+      <Route path="/galery" component={BlogGalery} />
+      <Route path="/about" component={BlogAbout} />
     </div>
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    posts: state.blog,
-  };
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-    getPosts: () => dispatch(blogAction()),
-  };
-};
-export default connect(mapStateToProps, mapDispatchToProps)(Blog);
+export default Blog;

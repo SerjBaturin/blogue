@@ -1,0 +1,12 @@
+.BlogNav {
+  margin-left: auto;
+  // border: 1px solid green;
+
+  a:first-child {
+    margin-left: 0;
+  }
+  a {
+    margin-left: 1em;
+    text-decoration: none;
+  }
+}
