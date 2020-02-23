@@ -1,22 +1,37 @@
 import React, { useRef, useState } from "react";
-// import { connect } from "react-redux";
+import { connect } from "react-redux";
+import loginAction from "../../redux/actions/login";
 import "./style.scss";
 
 const Login = props => {
-  const [user, setUser] = useState(null);
-  const login = useRef(null);
+  const inputLogin = useRef(null);
   const getUser = () => {
-    setUser(login.current.value);
+    props.setUser(inputLogin.current.value);
   };
+
   return (
     <div className="Login">
       <h2>Login</h2>
 
-      <input ref={login} type="text" placeholder="Login" required />
+      <input ref={inputLogin} type="text" placeholder="Login" required />
       <button onClick={getUser}>Click</button>
-      <h4>{user}</h4>
+      {props.user.role}
+      <h4>{props.user.name}</h4>
+      <h4>{props.user.email}</h4>
     </div>
   );
 };
 
-export default Login;
+const mapStateToProps = state => {
+  return {
+    user: state.login,
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setUser: login => dispatch(loginAction(login)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
