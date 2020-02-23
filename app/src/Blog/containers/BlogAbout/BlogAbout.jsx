@@ -3,7 +3,7 @@ import "./style.scss";
 
 const BlogAbout = props => {
   return (
-    <nav className="BlogAbout">
+    <nav className="Blog__About">
       <h2>Blog About</h2>
     </nav>
   );

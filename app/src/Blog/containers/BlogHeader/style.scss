@@ -1,5 +1,9 @@
-.BlogHeader {
+.Blog__Header {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
-  // border: 1px Solid red;
+  height: 50px;
+  margin-bottom: 2em;
+  background-color: #fafafa;
 }

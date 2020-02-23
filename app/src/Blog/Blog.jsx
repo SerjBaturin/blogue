@@ -5,6 +5,8 @@ import BlogNews from "./containers/BlogNews";
 import BlogPosts from "./containers/BlogPosts";
 import BlogGalery from "./containers/BlogGalery";
 import BlogAbout from "./containers/BlogAbout";
+import Login from "../Auth/Login";
+import Registration from "../Auth/Registration";
 import { Route } from "react-router-dom";
 import "./style.scss";
 
@@ -17,6 +19,8 @@ const Blog = () => {
       <Route path="/posts" component={BlogPosts} />
       <Route path="/galery" component={BlogGalery} />
       <Route path="/about" component={BlogAbout} />
+      <Route path="/login" component={Login} />
+      <Route path="/registration" component={Registration} />
     </div>
   );
 };

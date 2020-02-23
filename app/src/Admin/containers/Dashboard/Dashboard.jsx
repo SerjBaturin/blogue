@@ -3,7 +3,7 @@ import "./style.scss";
 
 const Dashboard = props => {
   return (
-    <div className="dashboard">
+    <div className="Admin__Dashboard">
       <h1>Dashboard</h1>
     </div>
   );

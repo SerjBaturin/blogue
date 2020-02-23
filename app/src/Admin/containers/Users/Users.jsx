@@ -3,7 +3,7 @@ import "./style.scss";
 
 const Users = props => {
   return (
-    <div className="users">
+    <div className="Admin__Users">
       <h1>Users</h1>
     </div>
   );

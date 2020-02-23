@@ -4,7 +4,7 @@ import "./style.scss";
 
 const BlogNav = props => {
   return (
-    <nav className="BlogNav">
+    <nav className="Blog__Nav">
       <NavLink to="/">Home</NavLink>
       <NavLink to="/news">News</NavLink>
       <NavLink to="/posts">Posts</NavLink>

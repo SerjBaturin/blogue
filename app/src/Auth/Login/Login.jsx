@@ -1,26 +1,21 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useRef, useState } from "react";
+// import { connect } from "react-redux";
 import "./style.scss";
 
-const Login = () => {
-  const sendData = () => {
-    const login = "kostya";
-    const email = "kostya@yandex.ru";
-    const password = "123123";
-    axios(`http://localhost:3000/auth/user/${login}&${password}`);
+const Login = props => {
+  const [user, setUser] = useState(null);
+  const login = useRef(null);
+  const getUser = () => {
+    setUser(login.current.value);
   };
-
   return (
-    <div className="login">
-      <button onClick={sendData}>SEND</button>
+    <div className="Login">
+      <h2>Login</h2>
+
+      <input ref={login} type="text" placeholder="Login" required />
+      <button onClick={getUser}>Click</button>
+      <h4>{user}</h4>
     </div>
-    // <div className="login">
-    //   <form className="login__form">
-    //     <input type="text" placeholder="login" />
-    //     <input type="text" placeholder="password" />
-    //     <input type="submit" />
-    //   </form>
-    // </div>
   );
 };
 

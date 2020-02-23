@@ -9,9 +9,9 @@ import Posts from "./containers/Posts";
 
 const Admin = () => {
   return (
-    <div className="admin">
+    <div className="Admin">
       <Sidebar />
-      <div className="admin__container">
+      <div className="Admin__container">
         <Header />
         <Route path="/admin/dashboard" component={Dashboard} />
         <Route path="/admin/users" component={Users} />

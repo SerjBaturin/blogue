@@ -3,7 +3,7 @@ import "./style.scss";
 
 const Header = props => {
   return (
-    <div className="header">
+    <div className="Admin__Header">
       <h1>Header</h1>
     </div>
   );
