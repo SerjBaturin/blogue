@@ -1,18 +1,24 @@
 import React from "react";
-import "./style.scss";
-import { Route, NavLink } from "react-router-dom";
-import Login from "./Login";
-import Registration from "./Registration";
+import { NavLink } from "react-router-dom";
+import styled from "styled-components";
+
+const AuthWrapper = styled.div`
+  margin-right: 2em;
+
+  a,
+  span {
+    color: black;
+    font-weight: 100;
+  }
+`;
 
 const Auth = props => {
   return (
-    <div className="Auth">
-      <div className="Auth__Nav">
-        <NavLink to="/login">Login</NavLink>
-        <span>/</span>
-        <NavLink to="/registration">Registration</NavLink>
-      </div>
-    </div>
+    <AuthWrapper>
+      <NavLink to="/login">Login </NavLink>
+      <span>/</span>
+      <NavLink to="/registration"> Registration</NavLink>
+    </AuthWrapper>
   );
 };
 

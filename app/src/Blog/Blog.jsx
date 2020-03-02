@@ -11,7 +11,6 @@ import BlogAbout from "./containers/BlogAbout";
 import Login from "../Auth/Login";
 import Registration from "../Auth/Registration";
 import { Route } from "react-router-dom";
-import "./style.scss";
 
 const Blog = props => {
   useEffect(() => {

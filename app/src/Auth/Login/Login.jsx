@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import { connect } from "react-redux";
 import loginAction from "../../redux/actions/login";
-import "./style.scss";
 
 const Login = props => {
   const inputLogin = useRef(null);

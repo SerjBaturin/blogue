@@ -1,6 +1,5 @@
 import React from "react";
 import BlogMainPost from "../BlogMainPost";
-import "./style.scss";
 
 const BlogHome = props => {
   return (

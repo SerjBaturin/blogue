@@ -1,11 +1,11 @@
 import React from "react";
 import Loader from "../../../common/Loader";
-import "./style.scss";
+import { Title } from "../../../styles/styles";
 
 const BlogPosts = props => {
   return (
     <div className="Blog__Posts">
-      <h2>{props.head}</h2>
+      <Title>{props.head}</Title>
       {props.posts.length === 0 && <Loader />}
       <ul>
         {props.posts.map((item, i) => (

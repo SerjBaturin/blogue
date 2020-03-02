@@ -1,6 +1,6 @@
 import React from "react";
-import "./style.scss";
 import { NavLink } from "react-router-dom";
+
 export default function Sidebar() {
   return (
     <div className="Admin__Sidebar">
