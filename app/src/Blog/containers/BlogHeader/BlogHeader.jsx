@@ -11,7 +11,7 @@ const BlogHeaderWrapper = styled.div`
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   // background-color: rgb(240, 240, 240);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 
   a.logo {
     display: flex;
