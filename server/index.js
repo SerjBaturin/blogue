@@ -26,7 +26,9 @@ app.use(
     extended: true,
   }),
 );
+
 app.use(bodyParser.json());
+
 app.use("/admin", require("./routes/admin"));
 app.use("/auth", require("./routes/auth"));
 app.use("/blog", require("./routes/blog"));

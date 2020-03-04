@@ -16,7 +16,9 @@ router.get("/users/all", (req, res) => {
 
 router.get("/users/:name", (req, res) => {
   User.findOne({ name: req.params.name })
-    .then(d => res.send(`${d.name} ${d.email} ${d._id}`))
+    .then(d => {
+      res.send(d);
+    })
     .catch(() => res.send("User not found"));
 });
 

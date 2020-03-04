@@ -14,9 +14,6 @@ const Login = props => {
 
       <input ref={inputLogin} type="text" placeholder="Login" required />
       <button onClick={getUser}>Click</button>
-      {props.user.role}
-      <h4>{props.user.name}</h4>
-      <h4>{props.user.email}</h4>
     </div>
   );
 };

@@ -1,14 +1,14 @@
 import React from "react";
 import Blog from "../Blog";
+import Admin from "../Admin";
 import "./style.scss";
 import { BrowserRouter } from "react-router-dom";
 
 const App = () => {
   return (
     <BrowserRouter>
-      <div className="App">
-        <Blog />
-      </div>
+      {/* <Admin /> */}
+      <Blog />
     </BrowserRouter>
   );
 };
