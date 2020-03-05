@@ -18,7 +18,13 @@ mongoose.connect(process.env.CONNECT, {
 });
 
 // Middlewares
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:8080",
+    credentials: true,
+  }),
+);
+
 // app.use(express.static("../app"));
 // app.use(session({ secret: "Shh, tis a secret!!!" }));
 app.use(
