@@ -1,8 +1,12 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import { connect } from "react-redux";
+import loggedAction from "../redux/actions/logged";
+import adminRedirect from "../redux/actions/adminRedirect";
+import { Redirect } from "react-router-dom";
 
 const AuthWrapper = styled.div`
   margin-right: 2em;
@@ -29,26 +33,52 @@ const AuthWrapper = styled.div`
 `;
 
 const Auth = props => {
-  return (
-    <AuthWrapper>
-      {props.user ? (
+  useEffect(() => {
+    props.getLogged();
+  }, []);
+
+  if (props.logged !== "guest" && props.logged !== "admin") {
+    return (
+      <AuthWrapper>
         <div className="Auth__Nav">
           <AccountCircleIcon style={{ fontSize: 16 }} />
-          <span>{props.user}</span>
+          <span>{props.logged}</span>
           <ExitToAppIcon
             style={{ fontSize: 16, color: "red" }}
             className="Auth__Icon_Exit"
           />
         </div>
-      ) : (
-        <Fragment>
-          <NavLink to="/login">Login </NavLink>
-          <span>/</span>
-          <NavLink to="/registration"> Registration</NavLink>
-        </Fragment>
-      )}
+      </AuthWrapper>
+    );
+  }
+
+  if (props.logged === "admin") {
+    props.getAdmin();
+    return <Redirect to="/" />;
+  }
+
+  return (
+    <AuthWrapper>
+      <Fragment>
+        <NavLink to="/login">Login </NavLink>
+        <span>/</span>
+        <NavLink to="/registration"> Registration</NavLink>
+      </Fragment>
     </AuthWrapper>
   );
 };
 
-export default Auth;
+const mapStateToProps = state => {
+  return {
+    logged: state.logged,
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    getLogged: () => dispatch(loggedAction()),
+    getAdmin: () => dispatch(adminRedirect()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Auth);

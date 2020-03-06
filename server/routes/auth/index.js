@@ -7,7 +7,7 @@ const JWT = require("jsonwebtoken");
 dotenv.config();
 
 // User FIND for login
-router.get("/:login", (req, res) => {
+router.get("/user/:login", (req, res) => {
   const login = req.params.login;
   User.findOne({ login }).then(d => {
     const payload = {
@@ -21,8 +21,12 @@ router.get("/:login", (req, res) => {
         maxAge: 3600000,
       })
       .status(200)
-      .send("OK");
+      .send(d.role);
   });
+});
+
+router.get("/logged", (req, res) => {
+  res.send("admin");
 });
 
 module.exports = router;

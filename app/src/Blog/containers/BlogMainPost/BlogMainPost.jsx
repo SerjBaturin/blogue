@@ -3,6 +3,14 @@ import styled from "styled-components";
 import { Container } from "../../../styles/styles";
 
 const BlogMainPostWrapper = styled.div`
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 400px;
+    margin-top: 4em;
+    margin-bottom: 4em;
+  }
+
   h1 {
     margin-bottom: 1em;
   }
@@ -11,23 +19,12 @@ const BlogMainPostWrapper = styled.div`
   }
 `;
 
-const BlogMainPostImg = styled.div`
-  width: 100%;
-  height: 400px;
-  margin-top: 4em;
-  margin-bottom: 4em;
-  background-image: url(${props => props.img});
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-`;
-
 const BlogMainPost = props => {
   const { title, img, text, author, date } = props.mainPost;
   return (
     <Container>
       <BlogMainPostWrapper>
-        <BlogMainPostImg img={img} />
+        <img src={img} alt="main post image" />
         <h1>{title}</h1>
         <p>{text}</p>
         <b>{author}</b>

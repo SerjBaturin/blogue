@@ -3,14 +3,21 @@ import Blog from "../Blog";
 import Admin from "../Admin";
 import "./style.scss";
 import { BrowserRouter } from "react-router-dom";
+import { connect } from "react-redux";
 
-const App = () => {
+const App = props => {
   return (
     <BrowserRouter>
-      {/* <Admin /> */}
-      <Blog />
+      {props.isAdmin === true && <Admin />}
+      {props.isAdmin === false && <Blog />}
     </BrowserRouter>
   );
 };
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    isAdmin: state.adminRedirect,
+  };
+};
+
+export default connect(mapStateToProps)(App);

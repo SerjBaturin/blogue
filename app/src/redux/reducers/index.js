@@ -5,6 +5,8 @@ import login from "./login";
 import dashboard from "./dashboard";
 import users from "./users";
 import getAdmin from "./getAdmin";
+import logged from "./logged";
+import adminRedirect from "./adminRedirect";
 
 export default combineReducers({
   dashboard,
@@ -13,4 +15,6 @@ export default combineReducers({
   login,
   users,
   getAdmin,
+  logged,
+  adminRedirect,
 });
